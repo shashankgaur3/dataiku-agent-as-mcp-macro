@@ -1,0 +1,49 @@
+/* This file is the descriptor for the python runnable dku-mcp-server-builder */
+{
+    "meta": {
+        "label": "Dataiku Agents as MCP Tools",
+        "description": "Macro to generate MCP Server Python File with Dataiku Agents as Tools",
+        "icon": "fas fa-tools"
+    },
+    
+    /* whether the runnable's code is untrusted */
+    "impersonate": true,
+    "resultType": "HTML",
+    "permissions": [],
+    "paramsPythonSetup": "params_python_choices.py",
+    
+    "params": [
+        {
+            "name": "agentTools",
+            "label": "Select Agent Tools",
+            "description": "Select one or more Agents which will be served as MCP Tools",
+            "type": "MULTISELECT",
+            "mandatory": true,
+            "getChoicesFromPython": true
+        },
+        {
+            "name": "name",
+            "label": "MCP Server Name",
+            "type": "STRING",
+            "description": "Name of the MCP Server",
+            "mandatory": true
+        },
+        {
+            "name": "instructions",
+            "label": "MCP Server Instructions",
+            "type": "STRING",
+            "description": "Describe the Tools provided by the server. This helps MCP Client understand how to use your tools effectively"
+        },
+        {
+            "name": "port",
+            "label": "Server Port",
+            "type": "INT",
+            "description": "Make sure no other server is using the same port",
+            "defaultValue": 40000
+            
+        }
+        
+
+    ]
+
+}
